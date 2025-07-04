@@ -96,7 +96,18 @@
             navbar.style.transform = show ? "translateY(0px)" : "translateY(-500px)";
         }
     </script>
-    <script src="./js/animation.js"></script>
+    <!-- Load library from the CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- Setup and start animation! -->
+  <script>
+    var typed = new Typed('#typewriter-text', {
+      strings: [  'Frontend Developer', 'Mobile App Developer'],
+      typeSpeed: 100,
+        backSpeed: 50,
+        loop: true,
+    });
+  </script>
 
 </script>
 </body>

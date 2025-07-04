@@ -1,7 +1,9 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
-/* Reset and base styles */
+/* =========================
+   Reset and Base Styles
+   ========================= */
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +15,9 @@ html {
     overflow-x: hidden;
 }
 
-/* Body background and layout */
+/* =========================
+   Body Styles
+   ========================= */
 body {
     width: 100%;
     height: 100vh;
@@ -30,7 +34,7 @@ nav {
     position: sticky;
 }
 
-/* Navigation container flex layout */
+/* Navigation container layout */
 .nav-container {
     width: 100%;
     height: 100%;
@@ -51,7 +55,7 @@ nav {
     text-shadow: 0 0 10px rgb(109,67,0);
 }
 
-/* Hamburger and cancel (mobile menu) buttons */
+/* Hamburger and cancel buttons for mobile nav */
 .hamburg, .cancel {
     cursor: pointer;
     position: absolute;
@@ -136,6 +140,7 @@ nav {
     transition: 0.2s linear;
 }
 
+/* Dropdown links */
 .dropdown .links a {
     color: white;
     display: flex;
@@ -176,10 +181,10 @@ section {
 
 /* Profile image styles */
 .main-container .image img { 
-    width: 280px;    /* Profile image width */
-    height: 280px;   /* Profile image height */
-    object-fit: contain; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 /* Main content styles */
@@ -207,6 +212,7 @@ section {
     font-size: clamp(1rem, 1rem + 5vw, 2rem);
 }
 
+/* Typewriter text styles */
 .content .typewriter span {
     color: rgb(109,67,0);
     font-size: 2.5rem;
@@ -220,6 +226,7 @@ section {
     border-left: 3px solid black;
     padding-left: 4px;
     animation: cursor-blink 0.7s steps(1) infinite;
+    white-space: pre;
 }
 
 @keyframes cursor-blink {
