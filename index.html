@@ -3,9 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Varun's Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    hello world! 
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Varun Pareek</span>
+            </div>
+            <!-- Navigation Links -->
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">Services</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#">Contact Us</a></div>
+            </div>
+            <!-- Hamburger Menu Button for Mobile -->
+            <button class="hamburg" aria-label="Open menu" onclick="toggleDropdown(true)">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- Dropdown Menu for Mobile -->
+        <div class="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Contact Us</a>
+                <!-- Close Dropdown Button -->
+                <button class="cancel" aria-label="Close menu" onclick="toggleDropdown(false)">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <section>
+        <div class="main-container">
+            <!-- Profile Image -->
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="./images/varunpic.jpg" alt="Profile image" >
+            </div>
+            <!-- Main Content -->
+            <div class="content">
+                <!-- Heading -->
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+                    Hey I'm <span>Varun</span>
+                </h1>
+                <!-- Typewriter Effect -->
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+                    I'm a <span id="typewriter-text"></span>
+                </div>
+                <!-- Description Paragraph -->
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+                    I am a passionate web developer with a keen interest in creating dynamic and responsive web applications. My expertise lies in HTML, CSS, and JavaScript,React and I am always eager to learn new technologies to enhance my skills. Let's build something amazing together!
+                </p>
+                <!-- Social Media Links -->
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <!-- Download CV Button -->
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <button>Download CV</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({ offset: 0 });
+
+        // Toggle dropdown menu for mobile navigation
+        function toggleDropdown(show) {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = show ? "translateY(0px)" : "translateY(-500px)";
+        }
+    </script>
+    <script>
+// filepath: /Users/varunpareek/Desktop/HTML/htmlLearning/index.html
+const roles = ["Frontend Developer", "Mobile App Developer"];
+let currentRole = 0;
+let charIndex = 0;
+let typing = true;
+const typewriter = document.getElementById("typewriter-text");
+
+function typeEffect() {
+    const text = roles[currentRole];
+    if (typing) {
+        if (charIndex < text.length) {
+            typewriter.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeEffect, 100);
+        } else {
+            typing = false;
+            setTimeout(typeEffect, 1200); // Pause before erasing
+        }
+    } else {
+        if (charIndex > 0) {
+            typewriter.textContent = text.substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(typeEffect, 50);
+        } else {
+            typing = true;
+            currentRole = (currentRole + 1) % roles.length;
+            setTimeout(typeEffect, 500);
+        }
+    }
+}
+typeEffect();
+</script>
 </body>
 </html>
