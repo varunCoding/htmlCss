@@ -181,10 +181,14 @@ section {
 
 /* Profile image styles */
 .main-container .image img { 
-    width: 280px;
-    height: 280px;
-    object-fit: contain;
-    border-radius: 50%;
+    width: 100%;
+    max-width: 460px;    /* Best fit for most screens */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Keeps image square */
+    object-fit: contain;   /* Ensures image covers the area */
+    border-radius: 50%;  
+    /* box-shadow: 0 4px 24px rgba(0,0,0,0.08); Optional: subtle shadow */
+
 }
 
 /* Main content styles */
@@ -219,19 +223,6 @@ section {
     text-shadow: 0 0 5px rgb(109,67,0);
     position: relative;
     transition: 0.3s linear;
-}
-
-/* Blinking cursor for typewriter effect */
-#typewriter-text {
-    border-left: 3px solid black;
-    padding-left: 4px;
-    animation: cursor-blink 0.7s steps(1) infinite;
-    white-space: pre;
-}
-
-@keyframes cursor-blink {
-    0%, 100% { border-color: black; }
-    50% { border-color: transparent; }
 }
 
 /* =========================
